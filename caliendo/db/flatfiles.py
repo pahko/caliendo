@@ -57,7 +57,7 @@ def insert_io( args ):
 
     try:
         with open(filepath, "w+") as f:
-            pickle.dump(args, f)
+            pickle.dump(args, f, pickle.HIGHEST_PROTOCOL)
     except IOError:
         if not os.environ.get('CALIENDO_TEST_SUITE', None):
             logger.warning( "Caliendo failed to open " + filepath + ", check file permissions." )

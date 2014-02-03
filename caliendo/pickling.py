@@ -141,4 +141,4 @@ def pickle_with_weak_refs( o ):
             truncate_attr_at_path(o, path)
         if type(val) == weakref.ref:
             setattr_at_path( o, path, val() ) # Resolve weak references
-    return pickle.dumps(o, pickle.HIGHEST_PROTOCOL)
+    return pickle.dumps(o)
